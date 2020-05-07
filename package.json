@@ -22,7 +22,8 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix"
+    "*.js": "eslint --fix",
+    "*.{js,css}": "eslint --fix"
   },
   "eslintConfig": {
     "extends": "react-app",
