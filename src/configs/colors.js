@@ -1,14 +1,13 @@
 const colors = {
-  primaryGreen: "#27ae60",
-  secondaryGreen: "#2ecc71",
-  primaryBlue: "#2980b9",
-  secondaryBlue: "#3498db",
-  primaryRed: "#c0392b",
-  secondaryRed: "#e74c3c",
-  primarySilver: "#bdc3c7",
-  secondarySilver: "#ecf0f1",
-  primaryGray: "#7f8c8d",
-  secondaryGray: "#95a5a6",
+  green: "#009432",
+  blue: "#2980b9",
+  red: "#c0392b",
+  silver: "#bdc3c7",
+  gray: "#7f8c8d",
+  midnightBlue: "#2c3e50",
+  yellow: "#f39c12",
+  white: "#fff",
+  swanWhite: "#f7f1e3",
 };
 
 export default colors;
