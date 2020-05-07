@@ -4,65 +4,6 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
-    let dummy = [
-      1,
-      3,
-      1,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      31,
-      3,
-    ];
     const fn = () => {
       alert("hello folks");
     };
@@ -83,8 +24,7 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
       </header>
