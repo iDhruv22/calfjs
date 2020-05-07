@@ -1,8 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    const fn = () => {
+      alert("hello folks");
+    };
+    window.addEventListener("click", fn);
+    return () => {
+      window.removeEventListener("click", fn);
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,8 +24,7 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
       </header>
