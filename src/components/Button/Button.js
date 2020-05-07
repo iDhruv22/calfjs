@@ -6,8 +6,19 @@ const Button = styled.button`
   display: inline-block;
 
   /* color */
-  color: ${(props) => forVariant(props.variant).color};
-  background-color: ${colors.white};
+  color: ${(props) => {
+    if (props.outline) {
+      return forVariant(props.variant).color;
+    }
+
+    return colors.white;
+  }};
+  background-color: ${(props) => {
+    if (props.outline) {
+      return colors.white;
+    }
+    return forVariant(props.variant).color;
+  }};
 
   /* padding */
   padding: 5px 10px;
@@ -38,6 +49,7 @@ const Button = styled.button`
   :disabled {
     color: ${forVariant("disabled").color};
     border-color: ${forVariant("disabled").color};
+    background-color: ${colors.white};
     cursor: not-allowed;
 
     :hover {
