@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import forVariant from "../utils.js/buttoncolor";
+import forVariant from "../utils/buttoncolor";
 import colors from "../configs/colors";
 
 const buttonMixin = css`
