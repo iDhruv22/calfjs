@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import forVariant from "../utils.js/buttoncolor";
+import forVariant from "../utils/buttoncolor";
 import colors from "../configs/colors";
 
 const buttonMixin = css`
@@ -23,11 +23,6 @@ const buttonMixin = css`
 
   /* when hover */
   :hover {
-    box-shadow: 0 0 2px 1px ${(props) => forVariant(props.variant).color};
-  }
-
-  :focus {
-    outline: none;
     box-shadow: 0 0 2px 1px ${(props) => forVariant(props.variant).color};
   }
 

@@ -46,6 +46,22 @@ const backgroundColor = css`
   }};
 `;
 
+const boxShadowColor = css`
+  box-shadow: 0 0 2px 1px
+    ${(props) => {
+      if (props.variant === "success") {
+        return colors.greenLight;
+      } else if (props.variant === "info") {
+        return colors.blueLight;
+      } else if (props.variant === "danger") {
+        return colors.redLight;
+      } else if (props.variant === "warning") {
+        return colors.yellowLight;
+      }
+      return colors.midnightBlueLight;
+    }};
+`;
+
 const alertMixin = css`
     ${color}
     ${borderColor}
@@ -53,4 +69,4 @@ const alertMixin = css`
 `;
 
 export default alertMixin;
-export { color, borderColor, backgroundColor };
+export { color, borderColor, backgroundColor, boxShadowColor };
