@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { useAccordianContext } from "./AccordianContext";
+import { useAccordionContext } from "./AccordionContext";
 
-const AccordianPanelHeaderStyled = styled.div``;
-AccordianPanelHeaderStyled.displayName = "AccordianPanelHeader";
+const AccordionPanelHeaderStyled = styled.div``;
+AccordionPanelHeaderStyled.displayName = "AccordionPanelHeader";
 
-const AccordianPanelBodyStyled = styled.div``;
-AccordianPanelBodyStyled.displayName = "AccordianPanelBody";
+const AccordionPanelBodyStyled = styled.div``;
+AccordionPanelBodyStyled.displayName = "AccordionPanelBody";
 
-const AccordianPanel = React.forwardRef((props, ref) => {
+const AccordionPanel = React.forwardRef((props, ref) => {
   const { index, title, children } = props;
 
   const {
@@ -18,12 +18,12 @@ const AccordianPanel = React.forwardRef((props, ref) => {
     expanded,
     onToggle,
     onMove,
-  } = useAccordianContext();
+  } = useAccordionContext();
 
   const isExpanded = expanded[index];
 
-  // accordian_panel_header => a_p_h_${id}_id_${index}
-  // accordian_panel_body => a_p_b_${id}_id_${index}
+  // accordion_panel_header => a_p_h_${id}_id_${index}
+  // accordion_panel_body => a_p_b_${id}_id_${index}
 
   const headerId = `a_p_h_${uid}_id_${index}`;
   const bodyId = `a_p_b_${uid}_id_${index}`;
@@ -77,7 +77,7 @@ const AccordianPanel = React.forwardRef((props, ref) => {
 
   return (
     <div ref={ref}>
-      <AccordianPanelHeaderStyled
+      <AccordionPanelHeaderStyled
         ref={headerRef}
         id={headerId}
         role="button"
@@ -90,18 +90,18 @@ const AccordianPanel = React.forwardRef((props, ref) => {
         onFocus={_handleOnFocus}>
         {title}
         <span aria-hidden={true}>{isExpanded ? "▲" : "▼"}</span>
-      </AccordianPanelHeaderStyled>
-      <AccordianPanelBodyStyled
+      </AccordionPanelHeaderStyled>
+      <AccordionPanelBodyStyled
         id={bodyId}
         role="region"
         aria-labelledby={headerId}
         hidden={!isExpanded}>
         {children}
-      </AccordianPanelBodyStyled>
+      </AccordionPanelBodyStyled>
     </div>
   );
 });
 
-AccordianPanel.displayName = "AccordianPanel";
+AccordionPanel.displayName = "AccordionPanel";
 
-export default AccordianPanel;
+export default AccordionPanel;

@@ -3,7 +3,7 @@ import "./App.css";
 import Button from "./components/Button/Button";
 import Alert from "./components/Alert/Alert";
 import useAccordionState from "./hooks/useAccordionState";
-import Accordian from "./components/Accordian/Accordian";
+import Accordion from "./components/Accordion/Accordion";
 
 function App() {
   const accordionProps = useAccordionState([false, true, false]);
@@ -60,20 +60,20 @@ function App() {
         <div>
           <h2>Accordion</h2>
           <div className="accordion">
-            <Accordian {...accordionProps}>
-              <Accordian.Panel title="Pane1">
+            <Accordion {...accordionProps}>
+              <Accordion.Panel title="Pane1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
                 harum pariatur similique.
-              </Accordian.Panel>
-              <Accordian.Panel title="Pane2">
+              </Accordion.Panel>
+              <Accordion.Panel title="Pane2">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
                 eveniet modi reiciendis.
-              </Accordian.Panel>
-              <Accordian.Panel title="Pane3">
+              </Accordion.Panel>
+              <Accordion.Panel title="Pane3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
                 similique nemo. Nulla, corrupti.
-              </Accordian.Panel>
-            </Accordian>
+              </Accordion.Panel>
+            </Accordion>
           </div>
         </div>
       </div>

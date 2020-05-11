@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import AccordianPanel from "./AccordianPanel";
+import AccordionPanel from "./AccordionPanel";
 import borderMixin from "../../mixins/border";
-import { AccordianProvider } from "./AccordianContext";
+import { AccordionProvider } from "./AccordionContext";
 
-const AccordianStyled = styled.div`
+const AccordionStyled = styled.div`
   ${borderMixin}
 `;
 
-AccordianStyled.displayName = "AccordianContainer";
+AccordionStyled.displayName = "AccordionContainer";
 
-function Accordian({ children, id, onToggle, expanded }) {
+function Accordion({ children, id, onToggle, expanded }) {
   return (
-    <AccordianStyled>
-      <AccordianProvider
+    <AccordionStyled>
+      <AccordionProvider
         id={id}
         onToggle={onToggle}
         expanded={expanded}
@@ -24,12 +24,12 @@ function Accordian({ children, id, onToggle, expanded }) {
             index,
           });
         })}
-      </AccordianProvider>
-    </AccordianStyled>
+      </AccordionProvider>
+    </AccordionStyled>
   );
 }
 
-Accordian.displayName = "Accordian";
-Accordian.Panel = AccordianPanel;
+Accordion.displayName = "Accordion";
+Accordion.Panel = AccordionPanel;
 
-export default Accordian;
+export default Accordion;

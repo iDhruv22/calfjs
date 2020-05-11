@@ -7,22 +7,22 @@ import React, {
 } from "react";
 import useRandomId from "../../hooks/useRandomId";
 
-const AccordianContext = createContext({
+const AccordionContext = createContext({
   focusRef: {},
 });
 
-function useAccordianContext() {
-  const context = useContext(AccordianContext);
+function useAccordionContext() {
+  const context = useContext(AccordionContext);
   if (context) {
     return context;
   }
 
   throw new Error(
-    "useAccordianContext can only use under the accordian provider",
+    "useAccordionContext can only use under the accordion provider",
   );
 }
 
-function useAccordianSelection(focusRef, noOfChildrens) {
+function useAccordionSelection(focusRef, noOfChildrens) {
   const initialState = [null];
 
   const reducer = (state = initialState, action) => {
@@ -53,7 +53,7 @@ function useAccordianSelection(focusRef, noOfChildrens) {
   return [selected, onMove];
 }
 
-function AccordianProvider({
+function AccordionProvider({
   id,
   expanded,
   children,
@@ -61,7 +61,7 @@ function AccordianProvider({
   noOfChildrens,
 }) {
   const focusRef = useRef(null);
-  const [selected, onMove] = useAccordianSelection(focusRef, noOfChildrens);
+  const [selected, onMove] = useAccordionSelection(focusRef, noOfChildrens);
   const uid = useRandomId(id);
 
   const context = useMemo(() => {
@@ -69,10 +69,10 @@ function AccordianProvider({
   }, [focusRef, uid, selected, expanded, onToggle, onMove]);
 
   return (
-    <AccordianContext.Provider value={context}>
+    <AccordionContext.Provider value={context}>
       {children}
-    </AccordianContext.Provider>
+    </AccordionContext.Provider>
   );
 }
 
-export { useAccordianContext, AccordianProvider };
+export { useAccordionContext, AccordionProvider };
