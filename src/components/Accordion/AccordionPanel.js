@@ -1,12 +1,38 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useAccordionContext } from "./AccordionContext";
+import colors from "../../configs/colors";
 
-const AccordionPanelHeaderStyled = styled.div``;
+const AccordionPanelHeaderStyled = styled.div`
+  position: relative;
+  padding: 12px 16px;
+  background-color: ${colors.silverLight};
+  cursor: pointer;
+
+  :focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px ${colors.darkSilver};
+  }
+`;
 AccordionPanelHeaderStyled.displayName = "AccordionPanelHeader";
 
-const AccordionPanelBodyStyled = styled.div``;
+const AccordionPanelBodyStyled = styled.div`
+  padding: 12px 16px;
+`;
 AccordionPanelBodyStyled.displayName = "AccordionPanelBody";
+
+const Arrow = styled.span`
+  display: flex;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 
 const AccordionPanel = React.forwardRef((props, ref) => {
   const { index, title, children } = props;
@@ -89,7 +115,7 @@ const AccordionPanel = React.forwardRef((props, ref) => {
         onBlur={_handleOnBlur}
         onFocus={_handleOnFocus}>
         {title}
-        <span aria-hidden={true}>{isExpanded ? "▲" : "▼"}</span>
+        <Arrow aria-hidden={true}>{isExpanded ? "▲" : "▼"}</Arrow>
       </AccordionPanelHeaderStyled>
       <AccordionPanelBodyStyled
         id={bodyId}

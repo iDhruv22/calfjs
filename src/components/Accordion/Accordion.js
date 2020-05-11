@@ -3,9 +3,11 @@ import styled from "styled-components";
 import AccordionPanel from "./AccordionPanel";
 import borderMixin from "../../mixins/border";
 import { AccordionProvider } from "./AccordionContext";
+import colors from "../../configs/colors";
 
 const AccordionStyled = styled.div`
   ${borderMixin}
+  border-color: ${colors.darkSilver};
 `;
 
 AccordionStyled.displayName = "AccordionContainer";

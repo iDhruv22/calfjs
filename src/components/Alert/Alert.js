@@ -6,8 +6,7 @@ import alertMixin, { color } from "../../mixins/alert";
 import fontMixin from "../../mixins/font";
 
 const AlertStyled = styled.div`
-
-box-sizing: border-box;
+  box-sizing: border-box;
 
   /* border */
   ${borderMixin}
@@ -50,13 +49,9 @@ const CloseButtonStyled = styled.button`
   /* border */
   border-style: none;
 
-  height: 100%;
+  height: 80%;
 
   cursor: pointer;
-
-  :focus {
-    outline: none;
-  }
 `;
 
 CloseButtonStyled.displayName = "AlertCloseButton";
@@ -84,7 +79,10 @@ function Alert(props) {
     <AlertStyled variant={props.variant} role="alert">
       {props.children}
       {props.wantClose ? (
-        <CloseButtonStyled onClick={_handleClose}>
+        <CloseButtonStyled
+          tabIndex="0"
+          variant={props.variant}
+          onClick={_handleClose}>
           <span aria-hidden="true">x</span>
         </CloseButtonStyled>
       ) : null}
