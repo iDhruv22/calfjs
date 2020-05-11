@@ -49,7 +49,7 @@ const CloseButtonStyled = styled.button`
   /* border */
   border-style: none;
 
-  height: 80%;
+  height: 100%;
 
   cursor: pointer;
 `;
