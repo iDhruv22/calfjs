@@ -26,11 +26,6 @@ const buttonMixin = css`
     box-shadow: 0 0 2px 1px ${(props) => forVariant(props.variant).color};
   }
 
-  :focus {
-    outline: none;
-    box-shadow: 0 0 2px 1px ${(props) => forVariant(props.variant).color};
-  }
-
   /* when disabled */
   :disabled {
     color: ${forVariant("disabled").color};

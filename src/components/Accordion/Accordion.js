@@ -6,6 +6,8 @@ import { AccordionProvider } from "./AccordionContext";
 import colors from "../../configs/colors";
 
 const AccordionStyled = styled.div`
+  box-sizing: border-box;
+
   ${borderMixin}
   border-color: ${colors.darkSilver};
 `;

@@ -8,11 +8,6 @@ const AccordionPanelHeaderStyled = styled.div`
   padding: 12px 16px;
   background-color: ${colors.silverLight};
   cursor: pointer;
-
-  :focus {
-    outline: none;
-    box-shadow: 0 0 2px 1px ${colors.darkSilver};
-  }
 `;
 AccordionPanelHeaderStyled.displayName = "AccordionPanelHeader";
 
@@ -82,22 +77,16 @@ const AccordionPanel = React.forwardRef((props, ref) => {
         onToggle && onToggle(index);
         break;
       case "ArrowDown":
-        e.preventDefault();
-        onMove("ArrowDown");
-        break;
       case "ArrowUp":
-        e.preventDefault();
-        onMove("ArrowUp");
-        break;
       case "Home":
-        e.preventDefault();
-        onMove("Home");
-        break;
       case "End":
         e.preventDefault();
-        onMove("End");
+        onMove({
+          type: e.key,
+        });
         break;
       default:
+        break;
     }
   };
 
