@@ -2,8 +2,12 @@ import React from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
 import Alert from "./components/Alert/Alert";
+import useAccordionState from "./hooks/useAccordionState";
+import Accordian from "./components/Accordian/Accordian";
 
 function App() {
+  const accordionProps = useAccordionState([false, true, false]);
+
   return (
     <div>
       <div className="App">
@@ -51,6 +55,25 @@ function App() {
             <Alert variant="info">Info Alert</Alert>
             <Alert variant="danger">Danger Alert</Alert>
             <Alert wantClose={false}>Default Alert</Alert>
+          </div>
+        </div>
+        <div>
+          <h2>Accordion</h2>
+          <div className="accordion">
+            <Accordian {...accordionProps}>
+              <Accordian.Panel title="Pane1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                harum pariatur similique.
+              </Accordian.Panel>
+              <Accordian.Panel title="Pane2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                eveniet modi reiciendis.
+              </Accordian.Panel>
+              <Accordian.Panel title="Pane3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+                similique nemo. Nulla, corrupti.
+              </Accordian.Panel>
+            </Accordian>
           </div>
         </div>
       </div>

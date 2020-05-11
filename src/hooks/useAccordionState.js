@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useAccordianState(initialState) {
+function useAccordionState(initialState) {
   const [expanded, setExpanded] = useState(initialState);
 
   const onToggle = (index) => {
@@ -15,4 +15,4 @@ function useAccordianState(initialState) {
   };
 }
 
-export default useAccordianState;
+export default useAccordionState;

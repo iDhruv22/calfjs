@@ -3,7 +3,7 @@ import React, {
   useContext,
   useRef,
   useMemo,
-  useState,
+  useReducer,
 } from "react";
 import useRandomId from "../../hooks/useRandomId";
 
@@ -22,14 +22,51 @@ function useAccordianContext() {
   );
 }
 
-function AccordianProvider(id, expanded, children) {
+function useAccordianSelection(focusRef, noOfChildrens) {
+  const initialState = [null];
+
+  const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "ArrowDown":
+        if (focusRef.current >= noOfChildrens - 1) {
+          return [0];
+        } else {
+          return [focusRef.current + 1];
+        }
+      case "ArrowUp":
+        if (focusRef.current <= 0) {
+          return [noOfChildrens - 1];
+        } else {
+          return [focusRef.current - 1];
+        }
+      case "Home":
+        return [0];
+      case "End":
+        return [noOfChildrens - 1];
+      default:
+        return state;
+    }
+  };
+
+  const [selected, onMove] = useReducer(reducer, initialState);
+
+  return [selected, onMove];
+}
+
+function AccordianProvider({
+  id,
+  expanded,
+  children,
+  onToggle,
+  noOfChildrens,
+}) {
   const focusRef = useRef(null);
-  const [selected, setSelected] = useState([null]);
+  const [selected, onMove] = useAccordianSelection(focusRef, noOfChildrens);
   const uid = useRandomId(id);
 
   const context = useMemo(() => {
-    return { focusRef, uid, selected, expanded };
-  }, [expanded, selected, uid]);
+    return { focusRef, uid, selected, expanded, onToggle, onMove };
+  }, [focusRef, uid, selected, expanded, onToggle, onMove]);
 
   return (
     <AccordianContext.Provider value={context}>

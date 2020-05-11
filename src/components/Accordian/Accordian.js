@@ -4,24 +4,28 @@ import AccordianPanel from "./AccordianPanel";
 import borderMixin from "../../mixins/border";
 import { AccordianProvider } from "./AccordianContext";
 
-const _Accordian = styled.div`
+const AccordianStyled = styled.div`
   ${borderMixin}
 `;
 
-_Accordian.displayName = "AccordianContainer";
+AccordianStyled.displayName = "AccordianContainer";
 
-function Accordian({ children, id }) {
+function Accordian({ children, id, onToggle, expanded }) {
   return (
-    <_Accordian>
-      <AccordianProvider id={id}>
-        {React.Children.map(children, (child, index) =>
-          React.createElement(child, {
+    <AccordianStyled>
+      <AccordianProvider
+        id={id}
+        onToggle={onToggle}
+        expanded={expanded}
+        noOfChildrens={React.Children.count(children)}>
+        {React.Children.map(children, (child, index) => {
+          return React.cloneElement(child, {
             ...child.props,
             index,
-          }),
-        )}
+          });
+        })}
       </AccordianProvider>
-    </_Accordian>
+    </AccordianStyled>
   );
 }
 
