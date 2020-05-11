@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { useAccordionContext } from "./AccordionContext";
 import colors from "../../configs/colors";
 
@@ -21,7 +22,7 @@ const Arrow = styled.span`
   font-weight: 900;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 16px;
   margin-left: 5px;
   margin-right: 5px;
   height: 100%;
@@ -118,5 +119,13 @@ const AccordionPanel = React.forwardRef((props, ref) => {
 });
 
 AccordionPanel.displayName = "AccordionPanel";
+
+AccordionPanel.propTypes = {
+  title: PropTypes.string,
+};
+
+AccordionPanel.defaultProps = {
+  title: "",
+};
 
 export default AccordionPanel;

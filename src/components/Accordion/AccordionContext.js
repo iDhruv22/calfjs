@@ -33,23 +33,18 @@ function useAccordionSelection(focusRef, noOfChildrens) {
         } else {
           return [focusRef.current + 1];
         }
-        break;
       case "ArrowUp":
         if (focusRef.current <= 0) {
           return [noOfChildrens - 1];
         } else {
           return [focusRef.current - 1];
         }
-        break;
       case "Home":
         return [0];
-        break;
       case "End":
         return [noOfChildrens - 1];
-        break;
       default:
         return state;
-        break;
     }
   };
 
