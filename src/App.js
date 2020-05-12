@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import Button from "./components/Button/Button";
-import Alert from "./components/Alert/Alert";
+import Button from "./components/Button";
+import Alert from "./components/Alert";
 import useAccordionState from "./hooks/useAccordionState";
-import Accordion from "./components/Accordion/Accordion";
+import Accordion from "./components/Accordion";
 
 function App() {
   const accordionProps = useAccordionState([false, true, false]);

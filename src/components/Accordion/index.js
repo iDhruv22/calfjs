@@ -16,6 +16,10 @@ const AccordionStyled = styled.div`
 
 AccordionStyled.displayName = "AccordionContainer";
 
+/**
+ *
+ * @param {*} param0
+ */
 function Accordion({
   children,
   id,
@@ -68,7 +72,16 @@ Accordion.displayName = "Accordion";
 Accordion.Panel = AccordionPanel;
 
 Accordion.propTypes = {
+  /**
+   * Array of flags to open the <Accordion.Panel /> by default, in case of
+   */
   expanded: PropTypes.arrayOf(PropTypes.bool),
+
+  /**
+   * Gets called when the user toggles the accordion
+   *
+   * @param {number} index The index of the <Accordion.Panel />
+   */
   onToggle: PropTypes.func,
 };
 

@@ -14,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "styleguide": "styleguidist server -p 4001",
+    "styleguide:build": "styleguidist build"
   },
   "husky": {
     "hooks": {
@@ -59,6 +61,7 @@
     "lint-staged": "^10.2.2",
     "nanoid": "2.1.11",
     "prettier": "^2.0.5",
+    "react-styleguidist": "^11.0.6",
     "styled-components": "^5.1.0"
   }
 }
