@@ -1,9 +1,10 @@
+import React from "react";
 import styled from "styled-components";
 import borderMixin from "../../mixins/border";
 import buttonMixin from "../../mixins/button";
 import fontMixin from "../../mixins/font";
 
-const Button = styled.button`
+const ButtonStyled = styled.button`
   display: inline-block;
 
   /* padding */
@@ -26,5 +27,9 @@ const Button = styled.button`
   transition: box-shadow 0.2s ease-in;
   cursor: pointer;
 `;
+
+function Button({ children, ...rest }) {
+  return <ButtonStyled {...rest}>{children}</ButtonStyled>;
+}
 
 export default Button;

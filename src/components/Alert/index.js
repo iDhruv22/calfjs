@@ -91,9 +91,12 @@ function Alert(props) {
 }
 
 Alert.propTypes = {
+  /** The flag to have close button on alert */
   wantClose: PropTypes.bool,
+  /** Close function will be called when alert is going to close */
   onClose: PropTypes.func,
-  variant: PropTypes.string,
+  /** The type of alert */
+  variant: PropTypes.oneOf(["success", "danger", "info", "warning"]),
 };
 
 Alert.defaultProps = {
