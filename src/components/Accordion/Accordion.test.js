@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import Accordion from "./Accordion";
+import Accordion from "./";
 
 describe("<Accordion /> render", () => {
   test("should render empty accordion", () => {

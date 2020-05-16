@@ -4,10 +4,12 @@ import Button from "./components/Button";
 import Alert from "./components/Alert";
 import useAccordionState from "./hooks/useAccordionState";
 import Accordion from "./components/Accordion";
+import Tabs from "./components/Tabs";
+import useTabState from "./hooks/useTabState";
 
 function App() {
   const accordionProps = useAccordionState([false, true, false]);
-
+  const tabProps = useTabState(1);
   return (
     <div>
       <div className="App">
@@ -110,6 +112,58 @@ function App() {
                 similique nemo. Nulla, corrupti.
               </Accordion.Panel>
             </Accordion>
+          </div>
+        </div>
+        <div>
+          <h1>Tab</h1>
+          <div>
+            <Tabs {...tabProps}>
+              <Tabs.Panel title="title 1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati voluptate minus minima similique voluptates
+                consectetur sapiente debitis exercitationem ipsum alias,
+                laboriosam repellendus accusantium, animi quo quos, maiores ut
+                nisi officia. Maxime, qui repellendus assumenda quo enim quis
+                nisi modi officia, quibusdam error molestiae doloribus provident
+                porro? Illum molestiae saepe officia laudantium omnis
+                blanditiis. Voluptas, adipisci fugiat? Beatae quisquam, officiis
+                neque quasi voluptates ex non minima nobis ipsam? Et, alias!
+                Obcaecati architecto, officiis reprehenderit at repellendus
+                labore voluptates non illum totam minus sit laboriosam
+                consequatur ipsum quidem, voluptatem, cumque possimus recusandae
+                quam! Est reprehenderit, officia, at non fuga minima dolorem
+                possimus perferendis eum neque recusandae dolore sed libero odit
+                aliquam. Numquam excepturi voluptatum sequi iste, similique
+                saepe, ad incidunt inventore consequuntur ipsum optio deserunt
+                voluptate aperiam quae praesentium rerum quidem perspiciatis.
+                Libero, culpa nisi. Eligendi nulla ducimus corrupti odit ea quos
+                minus labore molestias asperiores officia distinctio dolore
+                beatae sint voluptatibus magni commodi quae similique quibusdam
+                doloribus suscipit, voluptates quod? Soluta reiciendis quo
+                ipsum, enim magni eos repellendus earum nobis accusamus
+                voluptatum. Quos quibusdam labore, vitae ullam officia pariatur
+                aut expedita. Voluptatibus fugit dolores numquam tenetur a rem
+                eaque excepturi. Modi cum blanditiis assumenda id quaerat a
+                inventore, rem atque tenetur magni quisquam, consequatur
+                nesciunt nihil ad accusantium, error eius porro libero dolorum
+                provident! Facilis dolores officia modi ducimus doloribus
+                dignissimos voluptates voluptatibus laboriosam esse quo vero
+                velit distinctio magnam quidem, iure quia obcaecati, magni ad
+                sed rem illo blanditiis. Cupiditate impedit, quasi asperiores
+                corporis quo reiciendis, excepturi, quibusdam eveniet deserunt
+                architecto velit voluptatibus dolorem dicta voluptates aut.
+                Inventore quibusdam, provident exercitationem quidem dicta quos
+                officia recusandae aperiam. Asperiores eum fugit rerum?
+                Molestiae vel doloremque nulla consequatur velit veritatis
+                soluta, fugiat quasi in totam, pariatur eos quidem architecto
+                et. Vero unde fugit perferendis eum odit deserunt est enim
+                explicabo inventore libero.
+              </Tabs.Panel>
+              <Tabs.Panel title="title 2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                eveniet modi reiciendis.
+              </Tabs.Panel>
+            </Tabs>
           </div>
         </div>
       </div>
