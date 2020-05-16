@@ -9,6 +9,10 @@ const AccordionPanelHeaderStyled = styled.div`
   padding: 12px 16px;
   background-color: ${colors.silverLight};
   cursor: pointer;
+
+  &[aria-expanded="true"] {
+    font-weight: 500;
+  }
 `;
 AccordionPanelHeaderStyled.displayName = "AccordionPanelHeader";
 

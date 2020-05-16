@@ -3,7 +3,7 @@ import { useMemo } from "react";
 
 function useRandomId(id) {
   return useMemo(() => {
-    if (id === undefined) return nanoid(5);
+    if (id === undefined) return nanoid(5).toLowerCase();
     return id;
   }, [id]);
 }

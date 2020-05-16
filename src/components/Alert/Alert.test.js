@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Alert from "./Alert";
+import Alert from "./";
 
 describe("<Alert /> render", () => {
   test("render without any prop", () => {
@@ -11,12 +11,6 @@ describe("<Alert /> render", () => {
 
   test("render with the valid variant", () => {
     const { getByText } = render(<Alert variant="info">Info</Alert>);
-    const alertEl = getByText("Info");
-    expect(alertEl).toBeInTheDocument();
-  });
-
-  test("render with the invalid variant", () => {
-    const { getByText } = render(<Alert variant="info-wrong">Info</Alert>);
     const alertEl = getByText("Info");
     expect(alertEl).toBeInTheDocument();
   });

@@ -20,6 +20,7 @@ const colors = {
   yellowLight: "#fbe1b7",
   white: "#fff",
   swanWhite: "#f7f1e3",
+  gray80: "#ccc",
 };
 
 export default colors;
