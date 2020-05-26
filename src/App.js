@@ -6,10 +6,15 @@ import useAccordionState from "./hooks/useAccordionState";
 import Accordion from "./components/Accordion";
 import Tabs from "./components/Tabs";
 import useTabState from "./hooks/useTabState";
+import Modal from "./components/Modal";
+import useModalState from "./hooks/useModalState";
 
 function App() {
   const accordionProps = useAccordionState([false, true, false]);
   const tabProps = useTabState(1);
+  const [visible1, open1, close1] = useModalState(false);
+  const [visible2, open2, close2] = useModalState(false);
+
   return (
     <div>
       <div className="App">
@@ -164,6 +169,42 @@ function App() {
                 eveniet modi reiciendis.
               </Tabs.Panel>
             </Tabs>
+          </div>
+        </div>
+        <div>
+          <h1>Modal</h1>
+          <div>
+            <button onClick={open1}>Open1 Modal</button>
+            <Modal visible={visible1} onClose={close1} forceRender>
+              <Modal.Header>
+                <h2>Hello</h2>
+              </Modal.Header>
+              <Modal.Body>
+                <button onClick={open2}>Open2 Modal</button>
+                eaque voluptas aut quis magnam ratione maiores accusantium iusto
+                reprehenderit esse ut id corrupti vitae soluta asperiores
+                inventore mollitia ipsa. Aperiam qui reiciendis aliquid pariatur
+                maiores molestiae doloremque quibusdam porro corrupti hic
+                adipisci eaque, non tempora? At sint sed omnis quo ullam?
+                Consequuntur quos delectus iure cupiditate cumque voluptas
+                pariatur? Voluptate optio nemo molestiae, sequi ab cumque
+                tenetur amet, molestias nesciunt quam impedit ducimus
+                consectetur vitae numquam provident expedita alias consequatur
+                deleniti similique? Ullam ipsa voluptates facilis sunt, itaque
+                labore, voluptate rem eaque quaerat libero voluptatum dolorem,
+                tempora assumenda sint? Iusto, deleniti. Soluta neque
+                praesentium fugiat minus iure dicta eaque accusantium, animi
+                rerum quaerat possimus facere, fuga libero!
+              </Modal.Body>
+              <Modal.Footer>
+                <button onClick={close1}>Close1 Modal</button>
+              </Modal.Footer>
+            </Modal>
+            <Modal visible={visible2} onClose={close2}>
+              <Modal.Header>
+                <h2>Hello</h2>
+              </Modal.Header>
+            </Modal>
           </div>
         </div>
       </div>

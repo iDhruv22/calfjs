@@ -16,10 +16,6 @@ const AccordionStyled = styled.div`
 
 AccordionStyled.displayName = "AccordionContainer";
 
-/**
- *
- * @param {*} param0
- */
 function Accordion({
   children,
   id,
