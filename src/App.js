@@ -8,6 +8,7 @@ import Tabs from "./components/Tabs";
 import useTabState from "./hooks/useTabState";
 import Modal from "./components/Modal";
 import useModalState from "./hooks/useModalState";
+import Breadcrumb from "./components/Breadcrumb";
 
 function App() {
   const accordionProps = useAccordionState([false, true, false]);
@@ -205,6 +206,22 @@ function App() {
                 <h2>Hello</h2>
               </Modal.Header>
             </Modal>
+          </div>
+        </div>
+        <div>
+          <h1>Breadcrumb</h1>
+          <div>
+            <Breadcrumb>
+              <Breadcrumb.Item>
+                <a href="google.com">Google</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href="google.com">Google</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active>
+                <a href="google.com">Google</a>
+              </Breadcrumb.Item>
+            </Breadcrumb>
           </div>
         </div>
       </div>
